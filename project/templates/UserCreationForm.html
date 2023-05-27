@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create User</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">{{button_name}}</button>
+</form>
+{% if create %}
+    <form method="post">
+        already have account? <a href="/api/login">login</a>
+    </form>
+{% endif %}
+</body>
+</html>

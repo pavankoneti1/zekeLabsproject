@@ -1,0 +1,10 @@
+asgiref==3.7.1
+Django==4.2.1
+djangorestframework==3.14.0
+playsound==1.2.2
+pygame==2.4.0
+python-vlc==3.0.18122
+pytz==2023.3
+sqlparse==0.4.4
+typing_extensions==4.6.2
+tzdata==2023.3

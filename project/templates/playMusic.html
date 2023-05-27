@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>play music</title>
+</head>
+<body>
+<form method="post" action="play/">
+    {% csrf_token %}
+    {% for file in files %}
+        <button name="file_name" type="submit" value="{{file}}">{{file}}</button>
+    {% endfor %}
+</form>
+</body>
+</html>
