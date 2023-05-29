@@ -58,7 +58,7 @@ class MusicViewSet(viewsets.ModelViewSet):
             else:
                 Permissions.objects.create(music_id=music_id, user_id = user_id)
 
-            return Response({"success":True})
+            return Response({"success":True, "message": "Music file successfully uploaded"})
 
         return Response({"success":False, "message":"data is invalid", "error":form.errors})
 

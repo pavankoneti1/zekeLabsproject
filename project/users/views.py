@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth import models, forms, authenticate, login, logout
+from django.utils.decorators import method_decorator
 from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import UserSerializer
 # Create your views here.
@@ -28,6 +30,7 @@ class UserCreateViewSet(viewsets.ModelViewSet):
         message = form.errors
         return Response({"message":message})
 
+    @method_decorator[IsAuthenticated, ]
     def update(self, request, *args, **kwargs):
         # to update user credentials
         form = forms.UserChangeForm()
