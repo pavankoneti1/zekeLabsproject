@@ -11,7 +11,15 @@ from .serializers import UserSerializer
 # Create your views here.
 
 def hello(request):
-    return HttpResponse('hello zekelabs')
+    html = f'''
+        <html>
+            <body>
+                <h1>Hello from Vercel!</h1>
+                <p>The current time is.</p>
+            </body>
+        </html>
+        '''
+    return HttpResponse(html)
 class UserCreateViewSet(viewsets.ModelViewSet):
     """
     API end point for create, signup, fetch and delete user
