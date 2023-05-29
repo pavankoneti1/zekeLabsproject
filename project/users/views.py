@@ -10,6 +10,8 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import UserSerializer
 # Create your views here.
 
+def hello(request):
+    return HttpResponse('hello zekelabs')
 class UserCreateViewSet(viewsets.ModelViewSet):
     """
     API end point for create, signup, fetch and delete user

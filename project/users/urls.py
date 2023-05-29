@@ -9,5 +9,6 @@ router.register(r'login', UserLoginViewSet, basename='login')
 
 app_name='users'
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', include(router.urls)),
+    path('', hello),
 ]
