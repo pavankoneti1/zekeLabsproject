@@ -10,16 +10,10 @@ from rest_framework.permissions import IsAuthenticated
 from .serializers import UserSerializer
 # Create your views here.
 
-def hello(request):
-    html = f'''
-        <html>
-            <body>
-                <h1>Hello from Vercel!</h1>
-                <p>The current time is.</p>
-            </body>
-        </html>
-        '''
-    return HttpResponse(html)
+class HomePage(viewsets.ViewSet):
+    def list(self, request, *args, **kwargs):
+        return render(request, 'home.html')
+
 class UserCreateViewSet(viewsets.ModelViewSet):
     """
     API end point for create, signup, fetch and delete user
